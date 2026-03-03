@@ -1,4 +1,5 @@
-[README.md](https://github.com/user-attachments/files/25728176/README.md)# 🏊 CleanMyPool — Website Setup Gameplan
+[README.md](https://github.com/user-attachments/files/25728247/README.md)
+# 🏊 CleanMyPool — Website Setup Gameplan
 
 > **Motto:** All you do is swim.
 > **Target Domain:** cleanmypool.pro (or .com)
@@ -176,4 +177,3 @@ Replace these placeholder values in the code:
 ---
 
 *Built with the same stack as FixMyPool.pro — Vanilla HTML/CSS/JS + Vercel Serverless Functions. Zero framework, ultra-fast, SEO-optimized.*
-
