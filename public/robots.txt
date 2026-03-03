@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://cleanmypool.pro/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+# Block irrelevant paths
+Disallow: /api/

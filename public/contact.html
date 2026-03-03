@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | CleanMyPool Tampa Bay</title>
+  <meta name="description" content="Contact CleanMyPool for weekly pool cleaning service in South Tampa, Westchase, Carrollwood, Lutz, and Wesley Chapel.">
+  <link rel="canonical" href="https://cleanmypool.pro/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;0,900;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root { --pool-blue: #0EA5E9; --pool-deep: #0369A1; --pool-dark: #082F49; --pool-teal: #06B6D4; --off-white: #F0F9FF; --text: #0C1A2E; --text-muted: #4A6484; --border: rgba(14,165,233,0.15); --success: #10B981; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
+    nav { background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .nav-logo-mark { width: 36px; height: 36px; background: linear-gradient(135deg, var(--pool-blue), var(--pool-teal)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .nav-logo-text { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.2rem; color: var(--pool-dark); }
+    .nav-logo-text span { color: var(--pool-blue); }
+    .hero-mini { background: linear-gradient(135deg, var(--pool-dark), var(--pool-deep)); padding: 60px 24px 50px; text-align: center; }
+    .hero-mini h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 10px; letter-spacing: -0.03em; }
+    .hero-mini p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+    .contact-layout { max-width: 1000px; margin: 0 auto; padding: 60px 24px 80px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
+    @media(max-width: 680px) { .contact-layout { grid-template-columns: 1fr; } }
+    .contact-info h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; color: var(--pool-dark); margin-bottom: 20px; letter-spacing: -0.02em; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 24px; }
+    .contact-icon { width: 44px; height: 44px; background: var(--off-white); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; border: 1px solid var(--border); }
+    .contact-item h3 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 4px; }
+    .contact-item p, .contact-item a { font-size: 0.95rem; color: var(--text); font-weight: 500; text-decoration: none; }
+    .contact-item a:hover { color: var(--pool-blue); }
+    .areas-served { background: var(--off-white); border-radius: 16px; padding: 20px; border: 1px solid var(--border); margin-top: 16px; }
+    .areas-served h3 { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 900; color: var(--pool-dark); margin-bottom: 12px; }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .area-tag { background: white; border: 1px solid var(--border); color: var(--pool-deep); font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
+    .contact-form-wrap { background: white; border-radius: 20px; padding: 36px; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(14,165,233,0.06); }
+    .contact-form-wrap h2 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: var(--pool-dark); margin-bottom: 24px; letter-spacing: -0.02em; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .form-group label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); }
+    .form-group input, .form-group select, .form-group textarea { padding: 12px 16px; border: 1.5px solid #E2E8F0; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text); outline: none; transition: border-color 0.2s; width: 100%; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--pool-blue); box-shadow: 0 0 0 3px rgba(14,165,233,0.1); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit { width: 100%; padding: 14px; background: var(--pool-blue); color: white; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: all 0.25s; }
+    .btn-submit:hover { background: var(--pool-deep); transform: translateY(-1px); }
+    .success-msg { display: none; text-align: center; padding: 32px 16px; }
+    .success-msg .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .success-msg h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: var(--pool-dark); margin-bottom: 8px; }
+    .success-msg p { color: var(--text-muted); font-size: 0.9rem; }
+    footer { background: #051525; color: rgba(255,255,255,0.5); text-align: center; padding: 32px 24px; font-size: 0.82rem; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 10px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><div class="nav-logo-mark">🏊</div><span class="nav-logo-text">Clean<span>My</span>Pool</span></a>
+  <a href="/#signup" style="background: var(--pool-blue); color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;">Start My Service</a>
+</nav>
+<div class="hero-mini">
+  <h1>Contact Us</h1>
+  <p>Questions? Ready to sign up? We'd love to hear from you.</p>
+</div>
+<div class="contact-layout">
+  <div class="contact-info">
+    <h2>Get in touch</h2>
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div><h3>Phone / Text</h3><a href="tel:+18135753535">(813) 575-3535</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div><h3>Email</h3><a href="mailto:cleanmypool.fl@gmail.com">cleanmypool.fl@gmail.com</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div><h3>Based In</h3><p>Tampa, FL</p></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div><h3>Hours</h3><p>Mon–Fri: 8am–6pm<br>Sat: 9am–2pm</p></div>
+    </div>
+    <div class="areas-served">
+      <h3>🗺️ Service Areas</h3>
+      <div class="area-tags">
+        <span class="area-tag">South Tampa</span>
+        <span class="area-tag">Westchase</span>
+        <span class="area-tag">Carrollwood</span>
+        <span class="area-tag">Lutz</span>
+        <span class="area-tag">Wesley Chapel</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-wrap">
+    <div class="success-msg" id="success-msg">
+      <div class="icon">🏊</div>
+      <h3>Message received!</h3>
+      <p>We'll get back to you within 1 business day.</p>
+    </div>
+    <form id="contact-form">
+      <h2>Send us a message</h2>
+      <div class="form-group">
+        <label for="c-name">Name *</label>
+        <input type="text" id="c-name" name="name" placeholder="John Smith" required>
+      </div>
+      <div class="form-group">
+        <label for="c-email">Email *</label>
+        <input type="email" id="c-email" name="email" placeholder="john@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="c-phone">Phone</label>
+        <input type="tel" id="c-phone" name="phone" placeholder="(813) 555-0000">
+      </div>
+      <div class="form-group">
+        <label for="c-subject">Subject</label>
+        <select id="c-subject" name="subject">
+          <option>New Service Inquiry</option>
+          <option>Existing Customer Question</option>
+          <option>Billing Question</option>
+          <option>Repair / Issue</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="c-message">Message *</label>
+        <textarea id="c-message" name="message" placeholder="How can we help?" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message →</button>
+    </form>
+  </div>
+</div>
+<footer>
+  <p>© 2026 CleanMyPool LLC · Tampa, FL · <a href="/">Home</a><a href="/terms-of-service.html">Terms</a><a href="/privacy-policy.html">Privacy</a></p>
+</footer>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = {
+      name: document.getElementById('c-name').value,
+      email: document.getElementById('c-email').value,
+      phone: document.getElementById('c-phone').value,
+      subject: document.getElementById('c-subject').value,
+      message: document.getElementById('c-message').value,
+    };
+    try {
+      const res = await fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else { alert('Error sending. Please call us at (813) 575-3535.'); }
+    } catch { alert('Error sending. Please call us at (813) 575-3535.'); }
+  });
+</script>
+</body>
+</html>
