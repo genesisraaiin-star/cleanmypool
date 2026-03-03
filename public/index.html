@@ -182,6 +182,9 @@
   }</script>
 
   <!-- Preload critical font -->
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <link rel="preload" href="https://fonts.gstatic.com/s/unbounded/v6/d3p8ugGBDZZKkNnW4xVutg.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1560,13 +1563,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 });
 
 // Form submit
+// ── EMAILJS CONFIG — fill in your 3 values from emailjs.com ──
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account → API Keys
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services tab
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates tab
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
 const form=document.getElementById('signup-form');
 const success=document.getElementById('form-success');
 const sbtn=document.getElementById('sbtn');
 const sbtnTxt=document.getElementById('sbtn-txt');
 const sbtnLoad=document.getElementById('sbtn-load');
 
-form.addEventListener('submit',async e=>{
+form.addEventListener('submit', async e=>{
   e.preventDefault();
   const plan=document.querySelector('input[name="plan"]:checked');
   if(!plan){alert('Please select a service plan.');return;}
@@ -1579,26 +1589,26 @@ form.addEventListener('submit',async e=>{
 
   sbtn.disabled=true; sbtnTxt.style.display='none'; sbtnLoad.style.display='block';
 
-  const data={
-    name:`${fn} ${ln}`,email:em,phone:ph,
-    subject:`New Pool Service Signup — ${plan.value}`,
-    message:`NEW SIGNUP
-Plan: ${plan.value}
-Name: ${fn} ${ln}
-Email: ${em}
-Phone: ${ph}
-Address: ${addr}
-Area: ${document.getElementById('hood').value||'N/A'}
-Pool: ${document.getElementById('pt').value||'N/A'}
-Notes: ${document.getElementById('notes').value||'None'}`
+  const templateParams = {
+    from_name:  `${fn} ${ln}`,
+    from_email: em,
+    phone:      ph,
+    plan:       plan.value,
+    address:    addr,
+    area:       document.getElementById('hood').value || 'N/A',
+    pool_type:  document.getElementById('pt').value  || 'N/A',
+    notes:      document.getElementById('notes').value || 'None',
+    to_email:   'cleanmypool.fl@gmail.com'
   };
 
   try{
-    const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-    if(res.ok){form.style.display='none';success.style.display='block';success.scrollIntoView({behavior:'smooth',block:'center'});}
-    else throw new Error();
-  }catch{
-    sbtn.disabled=false;sbtnTxt.style.display='block';sbtnLoad.style.display='none';
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+    form.style.display='none';
+    success.style.display='block';
+    success.scrollIntoView({behavior:'smooth', block:'center'});
+  }catch(err){
+    console.error('EmailJS error:', err);
+    sbtn.disabled=false; sbtnTxt.style.display='block'; sbtnLoad.style.display='none';
     alert('Issue submitting. Please call (813) 585-4843 or try again.');
   }
 });
