@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/25728247/README.md)
+[README.md](https://github.com/user-attachments/files/25728742/README.md)
 # 🏊 CleanMyPool — Website Setup Gameplan
 
 > **Motto:** All you do is swim.
@@ -24,11 +24,11 @@
 - Point DNS to Vercel nameservers
 - Vercel handles SSL automatically
 
-### 4. Resend (Email API) — **Separate from FixMyPool**
-- Go to resend.com → Create new account
+### 4. EmailJS (Email) — Free, no backend needed
+- Go to emailjs.com → Create free account
 - Create a new API key
 - Verify your domain (cleanmypool.pro) for sending
-- **Vercel env variable:** `RESEND_API_KEY=re_xxxxxx`
+- **Vercel env variable:** `(No env variable needed — EmailJS is client-side)`
 - **Vercel env variable:** `CONTACT_TO=cleanmypool.fl@gmail.com`
 - Update `api/contact.js` FROM_EMAIL once domain is verified:
   `CleanMyPool <hello@cleanmypool.pro>`
@@ -39,7 +39,7 @@
 - Set up Google Workspace (optional, for @cleanmypool.pro email)
 
 ### 6. EmailJS — **Fallback / Separate**
-- Go to emailjs.com → Create new account for CleanMyPool
+- Go to emailjs.com → Create new account for CleanMyPool LLC
 - Create a new service (connect to cleanmypool Gmail)
 - Create a template for signup notifications
 - Get your **Public Key**, **Service ID**, **Template ID**
@@ -71,7 +71,7 @@
 
 ### 9. Google Business Profile — **New listing for CleanMyPool**
 - Go to business.google.com
-- Create new listing: "CleanMyPool"
+- Create new listing: "CleanMyPool LLC"
 - Category: "Swimming Pool Contractor" / "Pool Cleaning Service"
 - Address: Tampa, FL (service area business)
 - Add service areas: South Tampa, Westchase, Carrollwood, Lutz, Wesley Chapel
@@ -111,7 +111,7 @@ git push -u origin main
 ### Vercel Environment Variables to Set:
 | Key | Value |
 |-----|-------|
-| `RESEND_API_KEY` | Your Resend API key |
+| *(none)* | EmailJS needs no server env variable |
 | `CONTACT_TO` | `cleanmypool.fl@gmail.com` |
 | `CONTACT_FROM` | `CleanMyPool <hello@cleanmypool.pro>` |
 
@@ -124,7 +124,7 @@ cleanmypool/
 ├── vercel.json              # Vercel routing config
 ├── package.json
 ├── api/
-│   └── contact.js           # Serverless email handler (Resend)
+│   └── contact.js           # EmailJS handles email client-side (no serverless function needed)
 └── public/
     ├── index.html           # Main homepage ⭐
     ├── contact.html
@@ -170,7 +170,7 @@ cleanmypool/
 ## 📞 CONTACT INFO TO UPDATE
 
 Replace these placeholder values in the code:
-- Phone: `(813) 585-4843` — update if different for CleanMyPool
+- Phone: `(813) 575-3535` — update if different for CleanMyPool LLC
 - Email: `cleanmypool.fl@gmail.com` — update when Gmail is created
 - License number: Add FL contractor license once obtained
 
